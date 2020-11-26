@@ -4,8 +4,8 @@ This module will create a WordPress Server ASG and MariaDB ASG on public subnet 
 
 
 ```
-module "VPC" {
-  source              = "vrodi18/vpc-WordPress-MariaDB/aws"
+module "ASG" {
+  source              = "../"
   region              = "${var.region}"
   cidr_block          = "${var.cidr_block }"
   private_cidr_block1 = "${var.private_cidr_block1}"
@@ -14,11 +14,14 @@ module "VPC" {
   public_cidr_block1  = "${var.public_cidr_block1}"
   public_cidr_block2  = "${var.public_cidr_block2}"
   public_cidr_block3  = "${var.public_cidr_block3}"
-  instance_type    = "${var.instance_type_wp}"
-  
+  ami_id              = "${var.ami_id}"              //"ami-0803852886467f7bb"
+  ami_id_DB           = "${var.ami_id_DB}"
+
+  instance_type = "${var.instance_type}"
 
   tags = "${var.tags}"
 }
+
 
 ```
 ### Create "regions" folder. Inside "regions" create following files with needed content :
@@ -26,14 +29,16 @@ module "VPC" {
 ```
 region = "us-east-1"
 
-cidr_block          = "10.0.0.0/16"
+idr_block          = "10.0.0.0/16"
 private_cidr_block1 = "10.0.1.0/24"
 private_cidr_block2 = "10.0.2.0/24"
 private_cidr_block3 = "10.0.3.0/24"
 public_cidr_block1  = "10.0.101.0/24"
 public_cidr_block2  = "10.0.102.0/24"
 public_cidr_block3  = "10.0.103.0/24"
+ami_id              = "Your_AMI"
 instance_type       = "t2.micro"
+ami_id_DB           =  "Your_AMI"
 
 
 tags = {
@@ -49,14 +54,16 @@ tags = {
 ```
 region = "us-east-2"
 
-cidr_block          = "10.0.0.0/16"
+idr_block          = "10.0.0.0/16"
 private_cidr_block1 = "10.0.1.0/24"
 private_cidr_block2 = "10.0.2.0/24"
 private_cidr_block3 = "10.0.3.0/24"
 public_cidr_block1  = "10.0.101.0/24"
 public_cidr_block2  = "10.0.102.0/24"
 public_cidr_block3  = "10.0.103.0/24"
+ami_id              = "Your_AMI"
 instance_type       = "t2.micro"
+ami_id_DB           =  "Your_AMI"
 
 
 tags = {
@@ -72,14 +79,16 @@ tags = {
 ```
 region = "us-west-1"
 
-cidr_block          = "10.0.0.0/16"
+idr_block          = "10.0.0.0/16"
 private_cidr_block1 = "10.0.1.0/24"
 private_cidr_block2 = "10.0.2.0/24"
 private_cidr_block3 = "10.0.3.0/24"
 public_cidr_block1  = "10.0.101.0/24"
 public_cidr_block2  = "10.0.102.0/24"
 public_cidr_block3  = "10.0.103.0/24"
+ami_id              = "Your_AMI"
 instance_type       = "t2.micro"
+ami_id_DB           =  "Your_AMI"
 
 
 tags = {
@@ -95,15 +104,16 @@ tags = {
 ```
 region = "us-west-2"
 
-cidr_block          = "10.0.0.0/16"
+idr_block          = "10.0.0.0/16"
 private_cidr_block1 = "10.0.1.0/24"
 private_cidr_block2 = "10.0.2.0/24"
 private_cidr_block3 = "10.0.3.0/24"
 public_cidr_block1  = "10.0.101.0/24"
 public_cidr_block2  = "10.0.102.0/24"
 public_cidr_block3  = "10.0.103.0/24"
+ami_id              = "Your_AMI"
 instance_type       = "t2.micro"
-
+ami_id_DB           =  "Your_AMI"
 
 tags = {
     Name        = "VPC_Project"
