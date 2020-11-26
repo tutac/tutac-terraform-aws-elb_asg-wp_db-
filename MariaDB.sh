@@ -1,7 +1,9 @@
 #!/bin/bash
+
 sudo yum install mariadb-server mariadb -y
 sudo systemctl start mariadb
 sudo systemctl enable mariadb
+sleep 10
 printf "\n n\n y\n y\n y\n y\n" | mysql_secure_installation
 sudo mysql -e "CREATE DATABASE wordpress"
 sudo mysql -e "GRANT ALL PRIVILEGES ON wordpress.* TO wpuser@'%' IDENTIFIED BY 'dbpass'"
