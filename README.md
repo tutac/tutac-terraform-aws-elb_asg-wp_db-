@@ -1,5 +1,7 @@
 # terraform WordPress and MariaDB module
 
+[![CI](https://travis-ci.org/sadsfae/ansible-elk.svg?branch=master)](https://travis-ci.org/sadsfae/ansible-elk)
+
 This module will create a WordPress Server ASG on public subnet and MariaDB ASG on private subnet in  provided VPC
 
 
