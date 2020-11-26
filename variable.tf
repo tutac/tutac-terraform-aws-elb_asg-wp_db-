@@ -8,6 +8,7 @@ variable "public_cidr_block2" {}
 variable "public_cidr_block3" {}
 variable "instance_type" {}
 variable "ami_id" {}
+variable "ami_id_DB" {}
 
 variable "tags" {
   type = "map"
