@@ -1,6 +1,6 @@
 # terraform WordPress and MariaDB module
 
-This module will create a WordPress Server ASG and MariaDB ASG on public subnet in  provided VPC
+This module will create a WordPress Server ASG on public subnet and MariaDB ASG on private subnet in  provided VPC
 
 
 ```
